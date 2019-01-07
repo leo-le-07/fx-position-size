@@ -1,5 +1,5 @@
 import React from 'react';
-import Input from '../../common/Input';
+import Input from 'common/Input';
 import { calculateUsdPerPip } from './utils.js';
 
 class PositionCalculator extends React.Component {
