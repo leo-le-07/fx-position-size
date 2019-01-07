@@ -1,8 +1,19 @@
+// @flow
+
 import React from 'react';
 import Input from 'common/Input';
 import { calculateUsdPerPip } from './utils.js';
 
-class PositionCalculator extends React.Component {
+type State = {
+  accountSize: number,
+  riskMoney: number,
+  stopLossPips: number,
+  pair: string,
+  riskRatio: ?number,
+  lots: ?number,
+};
+
+class PositionCalculator extends React.Component<{}, State> {
   state = {
     accountSize: 800,
     riskMoney: 20,
@@ -16,14 +27,14 @@ class PositionCalculator extends React.Component {
     const { pair, riskMoney, stopLossPips, accountSize } = this.state;
     const usdPerPip = await calculateUsdPerPip(pair.toUpperCase());
     if (!usdPerPip) return this.setState({ lots: null, riskRatio:  null })
-    const lotsResult = (riskMoney / (usdPerPip * stopLossPips)).toFixed(3);
+    const lotsResult = (riskMoney / (usdPerPip * stopLossPips));
     this.setState({
       lots: lotsResult,
       riskRatio: (riskMoney / accountSize) * 100
     })
   }
 
-  handleOnChangeFor = (propertyName) => (event) => {
+  handleOnChangeFor = (propertyName: string) => (event: SyntheticInputEvent<HTMLInputElement>) => {
     const value = event.target.value;
     this.setState({
       [propertyName]: value
@@ -95,7 +106,7 @@ class PositionCalculator extends React.Component {
             </div>
             <div className="row">
               <label className="col-md-4">Lots</label>
-              <div className="col-md-4">{lots || 'N/A'}</div>
+              <div className="col-md-4">{(lots && lots.toFixed(3)) || 'N/A'}</div>
             </div>
           </div>
         </div>

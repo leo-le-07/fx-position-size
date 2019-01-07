@@ -59,7 +59,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "deploy": "aws s3 sync build/ s3://fx-position-app",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "flow": "flow"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -114,6 +115,8 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@babel/preset-env": "^7.2.3",
-    "babel-plugin-module-resolver": "^3.1.1"
+    "@babel/preset-flow": "^7.0.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "flow-bin": "^0.89.0"
   }
 }
