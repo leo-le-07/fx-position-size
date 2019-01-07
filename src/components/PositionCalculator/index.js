@@ -40,7 +40,7 @@ class PositionCalculator extends React.Component {
         </div>
         <div className="card-body row">
           <div className="col-md-6">
-            <h5 className="card-title">Values</h5>
+            <h5 className="card-title">Inputs</h5>
             <div className="form-group row">
               <label htmlFor="account-size" className="col-md-4">Account Size (USD)</label>
               <div className="col-md-8">
