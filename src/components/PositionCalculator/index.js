@@ -1,9 +1,6 @@
 import React from 'react';
+import Input from '../../common/Input';
 import { calculateUsdPerPip } from './utils.js';
-
-const Input = ({ type, id, value, onChange }) => (
-  <input type={type} id={id} className="form-control" value={value} onChange={onChange} />
-);
 
 class PositionCalculator extends React.Component {
   state = {
