@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PositionCalculator should match snapshot 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="card-header"
+  >
+    Position Size Calculator
+  </div>
+  <div
+    className="card-body row"
+  >
+    <div
+      className="col-md-6"
+    >
+      <h5
+        className="card-title"
+      >
+        Inputs
+      </h5>
+      <div
+        className="form-group row"
+      >
+        <label
+          className="col-md-4"
+          htmlFor="account-size"
+        >
+          Account Size (USD)
+        </label>
+        <div
+          className="col-md-8"
+        >
+          <Input
+            id="account-size"
+            onChange={[Function]}
+            type="number"
+            value={800}
+          />
+        </div>
+      </div>
+      <div
+        className="form-group row"
+      >
+        <label
+          className="col-md-4"
+          htmlFor="risk-money"
+        >
+          Risk Money (USD)
+        </label>
+        <div
+          className="col-md-8"
+        >
+          <Input
+            id="risk-money"
+            onChange={[Function]}
+            type="number"
+            value={20}
+          />
+        </div>
+      </div>
+      <div
+        className="form-group row"
+      >
+        <label
+          className="col-md-4"
+          htmlFor="stop-loss-pips"
+        >
+          Stop-Loss (pips)
+        </label>
+        <div
+          className="col-md-8"
+        >
+          <Input
+            id="stop-loss-pips"
+            onChange={[Function]}
+            type="number"
+            value={10}
+          />
+        </div>
+      </div>
+      <div
+        className="form-group row"
+      >
+        <label
+          className="col-md-4"
+          htmlFor="current-pair"
+        >
+          Current Pair
+        </label>
+        <div
+          className="col-md-8"
+        >
+          <Input
+            id="current-pair"
+            onChange={[Function]}
+            type="text"
+            value="EURUSD"
+          />
+        </div>
+      </div>
+      <button
+        className="btn btn-primary"
+        onClick={[Function]}
+      >
+        Calculate
+      </button>
+    </div>
+    <div
+      className="col-md-6"
+    >
+      <h5
+        className="card-title"
+      >
+        Result
+      </h5>
+      <div
+        className="row"
+      >
+        <label
+          className="col-md-4"
+        >
+          Risk Ratio, %
+        </label>
+        <div
+          className="col-md-4"
+        >
+          N/A
+           %
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <label
+          className="col-md-4"
+        >
+          Lots
+        </label>
+        <div
+          className="col-md-4"
+        >
+          N/A
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
