@@ -24,5 +24,8 @@
     "Response": true,
     "fetch": true,
     "Blob": true
+  },
+  "rules": {
+    "comma-dangle": ["error", "always-multiline"]
   }
 }

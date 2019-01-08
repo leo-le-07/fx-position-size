@@ -10,7 +10,7 @@ type State = {
   stopLossPips: number,
   pair: string,
   riskRatio: ?number,
-  lots: ?number,
+  lots: ?number
 };
 
 class PositionCalculator extends React.Component<{}, State> {
@@ -21,39 +21,48 @@ class PositionCalculator extends React.Component<{}, State> {
     pair: 'EURUSD',
     riskRatio: null,
     lots: null,
-  }
+  };
 
   calculate = async () => {
     const { pair, riskMoney, stopLossPips, accountSize } = this.state;
     const usdPerPip = await calculateUsdPerPip(pair.toUpperCase());
-    if (!usdPerPip) return this.setState({ lots: null, riskRatio:  null })
-    const lotsResult = (riskMoney / (usdPerPip * stopLossPips));
+    if (!usdPerPip) return this.setState({ lots: null, riskRatio: null });
+    const lotsResult = riskMoney / (usdPerPip * stopLossPips);
     this.setState({
       lots: lotsResult,
-      riskRatio: (riskMoney / accountSize) * 100
-    })
-  }
+      riskRatio: (riskMoney / accountSize) * 100,
+    });
+  };
 
-  handleOnChangeFor = (propertyName: string) => (event: SyntheticInputEvent<HTMLInputElement>) => {
+  handleOnChangeFor = (propertyName: string) => (
+    event: SyntheticInputEvent<HTMLInputElement>
+  ) => {
     const value = event.target.value;
     this.setState({
-      [propertyName]: value
+      [propertyName]: value,
     });
   };
 
   render() {
-    const { accountSize, riskMoney, stopLossPips, pair, riskRatio, lots } = this.state;
+    const {
+      accountSize,
+      riskMoney,
+      stopLossPips,
+      pair,
+      riskRatio,
+      lots,
+    } = this.state;
 
     return (
       <div className="card">
-        <div className="card-header">
-          Position Size Calculator
-        </div>
+        <div className="card-header">Position Size Calculator</div>
         <div className="card-body row">
           <div className="col-md-6">
             <h5 className="card-title">Inputs</h5>
             <div className="form-group row">
-              <label htmlFor="account-size" className="col-md-4">Account Size (USD)</label>
+              <label htmlFor="account-size" className="col-md-4">
+                Account Size (USD)
+              </label>
               <div className="col-md-8">
                 <Input
                   type="number"
@@ -64,7 +73,9 @@ class PositionCalculator extends React.Component<{}, State> {
               </div>
             </div>
             <div className="form-group row">
-              <label htmlFor="risk-money" className="col-md-4">Risk Money (USD)</label>
+              <label htmlFor="risk-money" className="col-md-4">
+                Risk Money (USD)
+              </label>
               <div className="col-md-8">
                 <Input
                   type="number"
@@ -75,7 +86,9 @@ class PositionCalculator extends React.Component<{}, State> {
               </div>
             </div>
             <div className="form-group row">
-              <label htmlFor="stop-loss-pips" className="col-md-4">Stop-Loss (pips)</label>
+              <label htmlFor="stop-loss-pips" className="col-md-4">
+                Stop-Loss (pips)
+              </label>
               <div className="col-md-8">
                 <Input
                   type="number"
@@ -86,7 +99,9 @@ class PositionCalculator extends React.Component<{}, State> {
               </div>
             </div>
             <div className="form-group row">
-              <label htmlFor="current-pair" className="col-md-4">Current Pair</label>
+              <label htmlFor="current-pair" className="col-md-4">
+                Current Pair
+              </label>
               <div className="col-md-8">
                 <Input
                   type="text"
@@ -96,7 +111,9 @@ class PositionCalculator extends React.Component<{}, State> {
                 />
               </div>
             </div>
-            <button className="btn btn-primary" onClick={this.calculate}>Calculate</button>
+            <button className="btn btn-primary" onClick={this.calculate}>
+              Calculate
+            </button>
           </div>
           <div className="col-md-6">
             <h5 className="card-title">Result</h5>
@@ -106,14 +123,15 @@ class PositionCalculator extends React.Component<{}, State> {
             </div>
             <div className="row">
               <label className="col-md-4">Lots</label>
-              <div className="col-md-4">{(lots && lots.toFixed(3)) || 'N/A'}</div>
+              <div className="col-md-4">
+                {(lots && lots.toFixed(3)) || 'N/A'}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
 export default PositionCalculator;
-
