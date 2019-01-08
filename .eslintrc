@@ -6,10 +6,13 @@
   "plugins": [
     "react",
     "import",
-    "flowtype"
+    "flowtype",
+    "prettier"
   ],
   "extends": [
     "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
   ],
   "globals": {
     "describe": true,
