@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import PositionCalculator from './components/PositionCalculator';
+import HomePage from 'components/HomePage';
 
 class App extends Component {
   render() {
     return (
-      <div className="App container">
-        <PositionCalculator />
+      <div className="App">
+        <HomePage />
       </div>
     );
   }
