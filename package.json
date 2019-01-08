@@ -23,7 +23,6 @@
     "eslint-config-react-app": "^3.0.6",
     "eslint-loader": "2.1.1",
     "eslint-plugin-flowtype": "2.50.1",
-    "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
     "file-loader": "2.0.0",
@@ -60,6 +59,7 @@
     "build": "node scripts/build.js",
     "deploy": "aws s3 sync build/ s3://fx-position-app",
     "test": "node scripts/test.js",
+    "lint": "eslint .",
     "flow": "flow"
   },
   "eslintConfig": {
@@ -117,6 +117,7 @@
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-flow": "^7.0.0",
     "babel-plugin-module-resolver": "^3.1.1",
+    "eslint-plugin-import": "^2.14.0",
     "flow-bin": "^0.89.0"
   }
 }

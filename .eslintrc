@@ -1,0 +1,25 @@
+{
+  "env": {
+    "es6": true
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "react",
+    "import",
+    "flowtype"
+  ],
+  "extends": [
+    "plugin:react/recommended",
+  ],
+  "globals": {
+    "describe": true,
+    "expect": true,
+    "fakeAction": true,
+    "jest": true,
+    "window": true,
+    "document": true,
+    "Response": true,
+    "fetch": true,
+    "Blob": true
+  }
+}

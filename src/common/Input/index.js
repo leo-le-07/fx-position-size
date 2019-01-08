@@ -1,7 +1,14 @@
 import React from 'react';
 
-class Input extends React.Component {
-  handleFocus = (event) => {
+type PropsType = {
+  type: string,
+  id: string,
+  value: string,
+  onChange: () => void,
+}
+
+class Input extends React.Component<PropsType> {
+  handleFocus = (event: SyntheticInputEvent<HTMLInputElement>) => {
     event.target.select();
   }
 
