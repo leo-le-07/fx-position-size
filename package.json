@@ -33,8 +33,10 @@
     "jest": "23.6.0",
     "jest-pnp-resolver": "1.0.1",
     "jest-resolve": "23.6.0",
+    "lodash": "4.17.11",
     "mini-css-extract-plugin": "0.4.3",
     "moment": "2.23.0",
+    "moment-timezone": "0.5.23",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.1.0",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -60,7 +62,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "deploy": "aws s3 sync build/ s3://fx-position-app",
-    "test": "jest --testPathPattern=__tests__ --detectOpenHandles",
+    "test": "TZ=Asia/Ho_Chi_Minh jest --testPathPattern=__tests__ --detectOpenHandles",
     "testall": "eslint . && flow && npm run test",
     "lint": "eslint .",
     "flow": "flow"
@@ -144,6 +146,7 @@
     "jest-cli": "^23.6.0",
     "jest-enzyme": "^7.0.1",
     "lint-staged": "^8.1.0",
+    "mockdate": "^2.0.2",
     "prettier": "^1.15.3",
     "pretty-quick": "^1.8.0"
   }

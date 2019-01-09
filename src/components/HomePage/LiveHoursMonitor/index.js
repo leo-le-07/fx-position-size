@@ -1,51 +1,42 @@
+// @flow
+
 import React from 'react';
 import moment from 'moment';
 import type Moment from 'moment';
 import Row from './Row';
+import { initializeHoursTimeLine, getWorkingHours } from './utils.js';
 
-class LiveHoursMonitor extends React.Component {
+type State = {
+  hoursTimeLine: number[],
+  areas: {
+    [string]: {
+      workingHours: number[],
+      name: string
+    }
+  },
+  currentTime: Moment
+};
+
+class LiveHoursMonitor extends React.Component<{}, State> {
+  timer: IntervalID;
+
   state = {
-    hours: [
-      5,
-      6,
-      7,
-      8,
-      9,
-      10,
-      11,
-      12,
-      13,
-      14,
-      15,
-      16,
-      17,
-      18,
-      19,
-      20,
-      21,
-      22,
-      23,
-      24,
-      1,
-      2,
-      3,
-      4,
-    ],
+    hoursTimeLine: initializeHoursTimeLine(),
     areas: {
       london: {
-        workingHours: [15, 16, 17, 18, 19, 20, 21, 22, 23],
+        workingHours: getWorkingHours('london'),
         name: 'London',
       },
       newyork: {
-        workingHours: [20, 21, 22, 23, 24, 1, 2, 3, 4],
+        workingHours: getWorkingHours('newyork'),
         name: 'New York',
       },
       sydney: {
-        workingHours: [5, 6, 7, 8, 9, 10, 11, 12, 13],
+        workingHours: getWorkingHours('sydney'),
         name: 'Sydney',
       },
       tokyo: {
-        workingHours: [7, 8, 9, 10, 11, 12, 13, 14, 15],
+        workingHours: getWorkingHours('tokyo'),
         name: 'Tokyo',
       },
     },
@@ -65,7 +56,7 @@ class LiveHoursMonitor extends React.Component {
   };
 
   render() {
-    const { hours, areas, currentTime } = this.state;
+    const { hoursTimeLine, areas, currentTime } = this.state;
 
     return (
       <div className="card">
@@ -78,7 +69,7 @@ class LiveHoursMonitor extends React.Component {
           <table className="table table-bordered">
             <thead>
               <tr>
-                {hours.map((h, index) => (
+                {hoursTimeLine.map((h, index) => (
                   <th
                     key={index}
                     scope="col"
@@ -95,7 +86,7 @@ class LiveHoursMonitor extends React.Component {
                   key={index}
                   name={areas[key].name}
                   workingHours={areas[key].workingHours}
-                  hoursLine={hours}
+                  hoursLine={hoursTimeLine}
                   currentTime={currentTime}
                 />
               ))}
