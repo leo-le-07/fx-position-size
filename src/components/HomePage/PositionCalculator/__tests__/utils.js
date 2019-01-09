@@ -2,10 +2,6 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import { calculateUsdPerPip } from '../utils.js';
 
-test('ex', () => {
-  expect(1).toBe(1);
-});
-
 describe('calculateUsdPerPip', () => {
   const mock = new MockAdapter(axios);
 

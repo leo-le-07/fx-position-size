@@ -54,7 +54,7 @@ class PositionCalculator extends React.Component<{}, State> {
     } = this.state;
 
     return (
-      <div className="card">
+      <div className="card mb-4">
         <div className="card-header">Position Size Calculator</div>
         <div className="card-body row">
           <div className="col-md-6">

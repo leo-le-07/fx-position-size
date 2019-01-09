@@ -59,7 +59,7 @@ class LiveHoursMonitor extends React.Component<{}, State> {
     const { hoursTimeLine, areas, currentTime } = this.state;
 
     return (
-      <div className="card">
+      <div className="card mb-4">
         <div className="card-header">
           Live Hours Monitor
           <br />
