@@ -65,7 +65,7 @@ class LiveHoursMonitor extends React.Component<{}, State> {
           <br />
           <h2 className="text-danger">{currentTime.format('HH:mm:ss')}</h2>
         </div>
-        <div className="card-body">
+        <div className="card-body table-responsive">
           <table className="table table-bordered">
             <thead>
               <tr>

@@ -681,10 +681,13 @@ export const getTodayEvents = async (): Promise<EventType[]> => {
     ],
   };
 
-  return response.data
-    .map(res => ({
-      ...res,
-      date: moment(res.date, 'YYYY-MM-DDTHH:mm:ssZ'),
-    }))
-    .filter(res => res.date.isSame(moment(), 'day'));
+  return (
+    response.data
+      .map(res => ({
+        ...res,
+        date: moment(res.date, 'YYYY-MM-DDTHH:mm:ssZ'),
+      }))
+      // $FlowFixMe
+      .filter(res => res.date.isSame(moment(), 'day'))
+  );
 };

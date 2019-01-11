@@ -1,8 +1,9 @@
 // @flow
+
 import React from 'react';
 import type { Moment } from 'moment';
-import Row from '../Row';
-import type { EventType } from '../utils.js';
+import EventTableRow from '../Row';
+import type { EventType } from '../../utils.js';
 
 const getNextTimeEvent = (
   currentTime: Moment,
@@ -13,7 +14,7 @@ const getNextTimeEvent = (
   return null;
 };
 
-const TableBody = ({
+const EventTableBody = ({
   currentTime,
   events,
 }: {
@@ -25,7 +26,7 @@ const TableBody = ({
   return (
     <tbody>
       {events.map((event, index) => (
-        <Row
+        <EventTableRow
           key={index}
           event={event}
           isNextEvent={
@@ -37,4 +38,4 @@ const TableBody = ({
   );
 };
 
-export default TableBody;
+export default EventTableBody;

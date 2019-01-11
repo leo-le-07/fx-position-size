@@ -2,7 +2,7 @@
 
 exports[`PositionCalculator should match snapshot 1`] = `
 <div
-  className="card"
+  className="card mb-4"
 >
   <div
     className="card-header"

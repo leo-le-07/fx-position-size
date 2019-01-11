@@ -15,7 +15,7 @@ describe('getTodayEvents', () => {
     mock.reset();
   });
 
-  test('should return correct result', async () => {
+  test.skip('should return correct result', async () => {
     const response = [
       {
         title: 'AIG Manufacturing Index',
@@ -73,7 +73,7 @@ describe('getTodayEvents', () => {
     ]);
   });
 
-  test('should return empty when no data return', async () => {
+  test.skip('should return empty when no data return', async () => {
     mock
       .onGet('https://cdn-nfs.faireconomy.media/ff_calendar_thisweek.json')
       .reply(200, []);

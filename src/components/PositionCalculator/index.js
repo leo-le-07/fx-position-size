@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import Input from 'common/Input';
+import Input from 'components/UI/Input';
 import { calculateUsdPerPip } from './utils.js';
 
 type State = {
@@ -57,7 +57,7 @@ class PositionCalculator extends React.Component<{}, State> {
       <div className="card mb-4">
         <div className="card-header">Position Size Calculator</div>
         <div className="card-body row">
-          <div className="col-md-6">
+          <div className="col-md-8">
             <h5 className="card-title">Inputs</h5>
             <div className="form-group row">
               <label htmlFor="account-size" className="col-md-4">
@@ -115,18 +115,10 @@ class PositionCalculator extends React.Component<{}, State> {
               Calculate
             </button>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-4">
             <h5 className="card-title">Result</h5>
-            <div className="row">
-              <label className="col-md-4">Risk Ratio, %</label>
-              <div className="col-md-4">{riskRatio || 'N/A'} %</div>
-            </div>
-            <div className="row">
-              <label className="col-md-4">Lots</label>
-              <div className="col-md-4">
-                {(lots && lots.toFixed(3)) || 'N/A'}
-              </div>
-            </div>
+            <label>Risk Ratio: {riskRatio || 'N/A'} %</label>
+            <label>Lots: {(lots && lots.toFixed(3)) || 'N/A'}</label>
           </div>
         </div>
       </div>

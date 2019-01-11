@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import type { EventType } from '../utils.js';
+import type { EventType } from '../../utils.js';
 
 type RowType = {
   event: EventType,
@@ -14,12 +14,12 @@ const getImpactColor = (impact: string): string => {
   return 'badge badge-pill badge-light';
 };
 
-const Row = ({ event, isNextEvent }: RowType) => {
+const EventTableRow = ({ event, isNextEvent }: RowType) => {
   return (
     <tr className={isNextEvent ? 'table-success' : ''}>
       <td>{event.date.format('HH:mm')}</td>
       <td>
-        {event.country}
+        {event.country}{' '}
         <span className={getImpactColor(event.impact)}>{event.impact}</span>
       </td>
       <td>{event.title}</td>
@@ -29,4 +29,4 @@ const Row = ({ event, isNextEvent }: RowType) => {
   );
 };
 
-export default Row;
+export default EventTableRow;
