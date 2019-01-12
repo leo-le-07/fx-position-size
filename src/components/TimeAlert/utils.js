@@ -3,7 +3,7 @@
 import moment from 'moment';
 import type Moment from 'moment';
 
-const PRECEDING_TIME_IN_SECONDS = (60 - 1) * 60;
+const PRECEDING_TIME_IN_SECONDS = (60 - 59) * 60;
 
 export const shouldRingBellOneHour = (currentTime: Moment): boolean => {
   const nextHour = currentTime
