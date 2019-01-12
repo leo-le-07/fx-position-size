@@ -4,6 +4,7 @@ import React from 'react';
 import PositionCalculator from 'components/PositionCalculator';
 import LiveHoursMonitor from 'components/LiveHoursMonitor';
 import Event from 'components/Event';
+import TimeAlert from 'components/TimeAlert';
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
         </div>
       </div>
       <Event />
+      <TimeAlert />
     </div>
   );
 };

@@ -4,7 +4,8 @@ type PropsType = {
   type: string,
   id: string,
   value: string,
-  onChange: () => void
+  onChange: () => void,
+  className: string
 };
 
 class Input extends React.Component<PropsType> {
@@ -13,13 +14,13 @@ class Input extends React.Component<PropsType> {
   };
 
   render() {
-    const { type, id, value, onChange } = this.props;
+    const { type, id, value, onChange, className } = this.props;
 
     return (
       <input
         type={type}
         id={id}
-        className="form-control"
+        className={className}
         value={value}
         onChange={onChange}
         onFocus={this.handleFocus}

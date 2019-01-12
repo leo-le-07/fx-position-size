@@ -69,6 +69,7 @@ class PositionCalculator extends React.Component<{}, State> {
                   id="account-size"
                   value={accountSize}
                   onChange={this.handleOnChangeFor('accountSize')}
+                  className="form-control"
                 />
               </div>
             </div>
@@ -82,6 +83,7 @@ class PositionCalculator extends React.Component<{}, State> {
                   id="risk-money"
                   value={riskMoney}
                   onChange={this.handleOnChangeFor('riskMoney')}
+                  className="form-control"
                 />
               </div>
             </div>
@@ -95,6 +97,7 @@ class PositionCalculator extends React.Component<{}, State> {
                   id="stop-loss-pips"
                   value={stopLossPips}
                   onChange={this.handleOnChangeFor('stopLossPips')}
+                  className="form-control"
                 />
               </div>
             </div>
@@ -108,6 +111,7 @@ class PositionCalculator extends React.Component<{}, State> {
                   id="current-pair"
                   value={pair}
                   onChange={this.handleOnChangeFor('pair')}
+                  className="form-control"
                 />
               </div>
             </div>
