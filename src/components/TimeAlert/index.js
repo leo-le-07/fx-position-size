@@ -46,6 +46,14 @@ class TimeAlert extends React.Component<{}, State> {
       } else {
         this.setState({ ringBell: false });
       }
+
+      // Reset ringbell whenever go to new hour
+      if (
+        (this.state.isOneHourChecked || this.state.isFourHoursChecked) &&
+        this.state.currentTime.minute() === 0
+      ) {
+        this.setState({ finishRingBell: false });
+      }
     }
   }
 
