@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio should match snapshot 1`] = `
+<Radio
+  handleOptionChange={[Function]}
+  options={
+    Array [
+      Object {
+        "name": "Value 1",
+        "value": "value-1",
+      },
+      Object {
+        "name": "Value 2",
+        "value": "value-2",
+      },
+      Object {
+        "name": "Value 3",
+        "value": "value-3",
+      },
+    ]
+  }
+  selectedOption="value-1"
+>
+  <div>
+    <div
+      className="radio"
+      key="0"
+    >
+      <label>
+        <input
+          checked={true}
+          onChange={[Function]}
+          type="radio"
+          value="value-1"
+        />
+         
+        Value 1
+      </label>
+    </div>
+    <div
+      className="radio"
+      key="1"
+    >
+      <label>
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="radio"
+          value="value-2"
+        />
+         
+        Value 2
+      </label>
+    </div>
+    <div
+      className="radio"
+      key="2"
+    >
+      <label>
+        <input
+          checked={false}
+          onChange={[Function]}
+          type="radio"
+          value="value-3"
+        />
+         
+        Value 3
+      </label>
+    </div>
+  </div>
+</Radio>
+`;
