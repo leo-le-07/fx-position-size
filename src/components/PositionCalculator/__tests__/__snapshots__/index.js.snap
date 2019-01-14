@@ -32,7 +32,7 @@ exports[`PositionCalculator should match snapshot 1`] = `
         <div
           className="col-md-8"
         >
-          <Input
+          <UIInput
             className="form-control"
             id="account-size"
             onChange={[Function]}
@@ -53,7 +53,7 @@ exports[`PositionCalculator should match snapshot 1`] = `
         <div
           className="col-md-8"
         >
-          <Input
+          <UIInput
             className="form-control"
             id="risk-money"
             onChange={[Function]}
@@ -74,7 +74,7 @@ exports[`PositionCalculator should match snapshot 1`] = `
         <div
           className="col-md-8"
         >
-          <Input
+          <UIInput
             className="form-control"
             id="stop-loss-pips"
             onChange={[Function]}
@@ -95,7 +95,7 @@ exports[`PositionCalculator should match snapshot 1`] = `
         <div
           className="col-md-8"
         >
-          <Input
+          <UIInput
             className="form-control"
             id="current-pair"
             onChange={[Function]}

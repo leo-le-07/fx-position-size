@@ -8,7 +8,7 @@ type PropsType = {
   className: string
 };
 
-class Input extends React.Component<PropsType> {
+class UIInput extends React.Component<PropsType> {
   handleFocus = (event: SyntheticInputEvent<HTMLInputElement>) => {
     event.target.select();
   };
@@ -29,4 +29,4 @@ class Input extends React.Component<PropsType> {
   }
 }
 
-export default Input;
+export default UIInput;

@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import Input from 'components/UI/Input';
+import UIInput from 'components/UI/Input';
 import { calculateUsdPerPip } from './utils.js';
 
 type State = {
@@ -64,7 +64,7 @@ class PositionCalculator extends React.Component<{}, State> {
                 Account Size (USD)
               </label>
               <div className="col-md-8">
-                <Input
+                <UIInput
                   type="number"
                   id="account-size"
                   value={accountSize}
@@ -78,7 +78,7 @@ class PositionCalculator extends React.Component<{}, State> {
                 Risk Money (USD)
               </label>
               <div className="col-md-8">
-                <Input
+                <UIInput
                   type="number"
                   id="risk-money"
                   value={riskMoney}
@@ -92,7 +92,7 @@ class PositionCalculator extends React.Component<{}, State> {
                 Stop-Loss (pips)
               </label>
               <div className="col-md-8">
-                <Input
+                <UIInput
                   type="number"
                   id="stop-loss-pips"
                   value={stopLossPips}
@@ -106,7 +106,7 @@ class PositionCalculator extends React.Component<{}, State> {
                 Current Pair
               </label>
               <div className="col-md-8">
-                <Input
+                <UIInput
                   type="text"
                   id="current-pair"
                   value={pair}

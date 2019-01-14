@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Radio should match snapshot 1`] = `
-<Radio
+exports[`UIRadio should match snapshot 1`] = `
+<UIRadio
   handleOptionChange={[Function]}
   options={
     Array [
@@ -68,5 +68,5 @@ exports[`Radio should match snapshot 1`] = `
       </label>
     </div>
   </div>
-</Radio>
+</UIRadio>
 `;

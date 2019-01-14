@@ -7,7 +7,11 @@ type RadioType = {
   handleOptionChange: (SyntheticEvent<HTMLOptionElement>) => void
 };
 
-const Radio = ({ options, selectedOption, handleOptionChange }: RadioType) => {
+const UIRadio = ({
+  options,
+  selectedOption,
+  handleOptionChange,
+}: RadioType) => {
   return (
     <div>
       {options.map((option, index) => (
@@ -27,4 +31,4 @@ const Radio = ({ options, selectedOption, handleOptionChange }: RadioType) => {
   );
 };
 
-export default Radio;
+export default UIRadio;

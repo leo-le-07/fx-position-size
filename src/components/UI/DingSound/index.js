@@ -10,7 +10,7 @@ export const STATUS = {
   STOP: Sound.status.STOPPED,
 };
 
-const DingSound = ({
+const UIDingSound = ({
   status,
   url = defaultSound,
 }: {
@@ -21,4 +21,4 @@ const DingSound = ({
   return <Sound url={url} playStatus={status} />;
 };
 
-export default DingSound;
+export default UIDingSound;

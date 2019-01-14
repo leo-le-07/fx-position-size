@@ -6,7 +6,7 @@ import LiveHoursMonitor from 'components/LiveHoursMonitor';
 import Event from 'components/Event';
 import TimeAlert from 'components/TimeAlert';
 
-const HomePage = () => {
+const ScreensHome = () => {
   return (
     <div className="container">
       <div className="row">
@@ -23,4 +23,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default ScreensHome;

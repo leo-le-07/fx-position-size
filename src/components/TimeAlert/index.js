@@ -3,9 +3,8 @@
 import React from 'react';
 import moment from 'moment';
 import type Moment from 'moment';
-import Input from 'components/UI/Input';
-import Radio from 'components/UI/Radio';
-import DingSound, { STATUS } from 'components/UI/DingSound';
+import UIRadio from 'components/UI/Radio';
+import UIDingSound, { STATUS } from 'components/UI/DingSound';
 import { shouldRingBellOneHour, shouldRingBellFourHours } from './utils.js';
 
 type State = {
@@ -88,13 +87,13 @@ class TimeAlert extends React.Component<{}, State> {
           <br />
         </div>
         <div className="card-body">
-          <Radio
+          <UIRadio
             options={OPTIONS}
             selectedOption={timeOption}
             handleOptionChange={this.handleOptionChange}
           />
         </div>
-        {this.state.ringBell && <DingSound status={STATUS.PLAY} />}
+        {this.state.ringBell && <UIDingSound status={STATUS.PLAY} />}
       </div>
     );
   }
