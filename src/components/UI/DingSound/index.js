@@ -15,6 +15,9 @@ const DingSound = ({
 }: {
   status: string,
   url?: string
-}) => <Sound url={url} playStatus={status} />;
+}) => {
+  console.log('Make sound');
+  return <Sound url={url} playStatus={status} />;
+};
 
 export default DingSound;
