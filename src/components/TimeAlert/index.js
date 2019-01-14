@@ -4,26 +4,37 @@ import React from 'react';
 import moment from 'moment';
 import type Moment from 'moment';
 import Input from 'components/UI/Input';
+import Radio from 'components/UI/Radio';
 import DingSound, { STATUS } from 'components/UI/DingSound';
 import { shouldRingBellOneHour, shouldRingBellFourHours } from './utils.js';
 
 type State = {
-  isOneHourChecked: boolean,
-  isFourHoursChecked: boolean,
+  timeOption: string,
   currentTime: Moment,
   finishRingBell: boolean,
   ringBell: boolean
 };
 
+const OPTION_VALUES = {
+  NONE: 'none',
+  ONE_HOUR: 'one',
+  FOUR_HOUR: 'four',
+};
+
+const OPTIONS = [
+  { value: OPTION_VALUES.NONE, name: 'None' },
+  { value: OPTION_VALUES.ONE_HOUR, name: 'Every 1 hour' },
+  { value: OPTION_VALUES.FOUR_HOUR, name: 'Every 4 hours' },
+];
+
 class TimeAlert extends React.Component<{}, State> {
   timer: IntervalID;
 
   state = {
-    isOneHourChecked: false,
-    isFourHoursChecked: false,
     currentTime: moment(),
-    finishRingBell: true,
+    finishRingBell: false,
     ringBell: false,
+    timeOption: OPTION_VALUES.ONE_HOUR,
   };
 
   componentDidMount() {
@@ -37,9 +48,9 @@ class TimeAlert extends React.Component<{}, State> {
   componentDidUpdate({  }: {}, prevState: State) {
     if (!prevState.currentTime.isSame(this.state.currentTime)) {
       const isOnTime =
-        (this.state.isOneHourChecked &&
+        (this.state.timeOption === OPTION_VALUES.ONE_HOUR &&
           shouldRingBellOneHour(this.state.currentTime)) ||
-        (this.state.isFourHoursChecked &&
+        (this.state.timeOption === OPTION_VALUES.FOUR_HOUR &&
           shouldRingBellFourHours(this.state.currentTime));
       if (isOnTime && !this.state.finishRingBell) {
         this.setState({ ringBell: true, finishRingBell: true });
@@ -49,7 +60,7 @@ class TimeAlert extends React.Component<{}, State> {
 
       // Reset ringbell whenever go to new hour
       if (
-        (this.state.isOneHourChecked || this.state.isFourHoursChecked) &&
+        this.state.timeOption !== OPTION_VALUES.NONE &&
         this.state.currentTime.minute() === 0
       ) {
         this.setState({ finishRingBell: false });
@@ -57,11 +68,11 @@ class TimeAlert extends React.Component<{}, State> {
     }
   }
 
-  handleOnCheckedFor = (propertyName: string) => () => {
-    this.setState(prevState => ({
-      [propertyName]: !prevState[propertyName],
+  handleOptionChange = (e: SyntheticEvent<HTMLOptionElement>) => {
+    this.setState({
+      timeOption: e.currentTarget.value,
       finishRingBell: false,
-    }));
+    });
   };
 
   tick = () => {
@@ -69,7 +80,7 @@ class TimeAlert extends React.Component<{}, State> {
   };
 
   render() {
-    const { isOneHourChecked, isFourHoursChecked } = this.state;
+    const { timeOption } = this.state;
     return (
       <div className="card mb-4">
         <div className="card-header">
@@ -77,30 +88,11 @@ class TimeAlert extends React.Component<{}, State> {
           <br />
         </div>
         <div className="card-body">
-          <div className="form-check">
-            <Input
-              type="checkbox"
-              id="one-hour"
-              value={isOneHourChecked}
-              onChange={this.handleOnCheckedFor('isOneHourChecked')}
-              className="form-check-input"
-            />
-            <label className="form-check-label" htmlFor="one-hour">
-              Every 1 hour
-            </label>
-          </div>
-          <div className="form-check">
-            <Input
-              type="checkbox"
-              id="four-hour"
-              value={isFourHoursChecked}
-              onChange={this.handleOnCheckedFor('isFourHoursChecked')}
-              className="form-check-input"
-            />
-            <label className="form-check-label" htmlFor="exampleCheck1">
-              Every 4 hours
-            </label>
-          </div>
+          <Radio
+            options={OPTIONS}
+            selectedOption={timeOption}
+            handleOptionChange={this.handleOptionChange}
+          />
         </div>
         {this.state.ringBell && <DingSound status={STATUS.PLAY} />}
       </div>

@@ -13,7 +13,7 @@ exports[`PositionCalculator should match snapshot 1`] = `
     className="card-body row"
   >
     <div
-      className="col-md-6"
+      className="col-md-8"
     >
       <h5
         className="card-title"
@@ -33,6 +33,7 @@ exports[`PositionCalculator should match snapshot 1`] = `
           className="col-md-8"
         >
           <Input
+            className="form-control"
             id="account-size"
             onChange={[Function]}
             type="number"
@@ -53,6 +54,7 @@ exports[`PositionCalculator should match snapshot 1`] = `
           className="col-md-8"
         >
           <Input
+            className="form-control"
             id="risk-money"
             onChange={[Function]}
             type="number"
@@ -73,6 +75,7 @@ exports[`PositionCalculator should match snapshot 1`] = `
           className="col-md-8"
         >
           <Input
+            className="form-control"
             id="stop-loss-pips"
             onChange={[Function]}
             type="number"
@@ -93,6 +96,7 @@ exports[`PositionCalculator should match snapshot 1`] = `
           className="col-md-8"
         >
           <Input
+            className="form-control"
             id="current-pair"
             onChange={[Function]}
             type="text"
@@ -108,42 +112,22 @@ exports[`PositionCalculator should match snapshot 1`] = `
       </button>
     </div>
     <div
-      className="col-md-6"
+      className="col-md-4"
     >
       <h5
         className="card-title"
       >
         Result
       </h5>
-      <div
-        className="row"
-      >
-        <label
-          className="col-md-4"
-        >
-          Risk Ratio, %
-        </label>
-        <div
-          className="col-md-4"
-        >
-          N/A
-           %
-        </div>
-      </div>
-      <div
-        className="row"
-      >
-        <label
-          className="col-md-4"
-        >
-          Lots
-        </label>
-        <div
-          className="col-md-4"
-        >
-          N/A
-        </div>
-      </div>
+      <label>
+        Risk Ratio: 
+        N/A
+         %
+      </label>
+      <label>
+        Lots: 
+        N/A
+      </label>
     </div>
   </div>
 </div>

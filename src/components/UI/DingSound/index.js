@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Sound from 'react-sound';
-import defaultSound from '../../../assets/ding.wav';
+// $FlowFixMe
+import defaultSound from './ding.wav';
 
 export const STATUS = {
   PLAY: Sound.status.PLAYING,
