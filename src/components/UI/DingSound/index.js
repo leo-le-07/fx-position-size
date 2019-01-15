@@ -3,7 +3,7 @@
 import React from 'react';
 import Sound from 'react-sound';
 // $FlowFixMe
-import defaultSound from './ding.wav';
+import defaultSound from 'assets/sounds/electricity.mp3';
 
 export const STATUS = {
   PLAY: Sound.status.PLAYING,

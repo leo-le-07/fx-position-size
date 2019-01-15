@@ -37,7 +37,7 @@ class TimeAlert extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    this.timer = setInterval(this.tick, 2000);
+    this.timer = setInterval(this.tick, 3000);
   }
 
   componentWillUnmount() {
