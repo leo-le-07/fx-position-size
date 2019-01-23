@@ -1,20 +1,27 @@
-import React, { Component } from 'react';
-import './App.css';
-import ScreensRoot from 'screens/Root';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <Route>
-          <div className="App">
-            <ScreensRoot />
-          </div>
-        </Route>
-      </Router>
-    );
-  }
-}
-
-export default App;
+'use strict';
+var __importDefault =
+  (this && this.__importDefault) ||
+  function(mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
+Object.defineProperty(exports, '__esModule', { value: true });
+var react_1 = __importDefault(require('react'));
+require('./App.css');
+var Root_1 = __importDefault(require('@/screens/Root'));
+var react_router_dom_1 = require('react-router-dom');
+var App = function() {
+  return react_1.default.createElement(
+    react_router_dom_1.BrowserRouter,
+    null,
+    react_1.default.createElement(
+      react_router_dom_1.Route,
+      null,
+      react_1.default.createElement(
+        'div',
+        { className: 'App' },
+        react_1.default.createElement(Root_1.default, null)
+      )
+    )
+  );
+};
+exports.default = App;
