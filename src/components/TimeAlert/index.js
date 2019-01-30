@@ -4,7 +4,7 @@ import React from 'react';
 import moment from 'moment';
 import type Moment from 'moment';
 import UIRadio from 'components/UI/Radio';
-import UIDingSound, { STATUS } from 'components/UI/DingSound';
+import UIAudio from 'components/UI/Audio';
 import { shouldRingBellOneHour, shouldRingBellFourHours } from './utils.js';
 
 type State = {
@@ -93,7 +93,7 @@ class TimeAlert extends React.Component<{}, State> {
             handleOptionChange={this.handleOptionChange}
           />
         </div>
-        {this.state.ringBell && <UIDingSound status={STATUS.PLAY} />}
+        {this.state.ringBell && <UIAudio />}
       </div>
     );
   }
